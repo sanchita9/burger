@@ -14,7 +14,7 @@ else {
   password: "MAtarini*1",
   database: "burgers_db"
 });
-}
+};
 
 connection.connect(function(err) {
   if (err) {
