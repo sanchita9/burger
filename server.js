@@ -1,9 +1,20 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var mysql = require("mysql");
 var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
+// var models = require("../models")
 
 var app = express();
+
+// MySQL connection initialization
+var connection = mysql.createConnection({
+	host : "localhost",
+	user : "root",
+	password : "",
+	database : "burgers_db"
+});
+
 app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({

@@ -1,4 +1,18 @@
 // Here is where to set up the model for how to interface with the database
+'use strict';
+module.exports = function(sequelize, DataTypes) {
+  var burger = sequelize.define('Burger', {
+    burger_name: DataTypes.STRING,
+    devoured: DataTypes.BOOLEAN
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
+  });
+  return Burger;
+};
 
 var orm = require('../config/orm.js');
 
